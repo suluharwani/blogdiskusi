@@ -6,11 +6,14 @@ class Home extends BaseController
 {
     public function index()
     {
-        echo base_url();
-        echo $_ENV['test'];
+        $data['title'] = "Judul";
+        return view('home/index', $data);
     }
     public function test()
     {
-      echo "test";
+      echo $this->a();
+    }
+    function a(){
+        return "abcdefghij";
     }
 }
