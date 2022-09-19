@@ -39,6 +39,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/test', 'Home::test');
 $routes->get('/adm', 'Admin::index');
 $routes->get('/adm/get_name/(:any)', 'Admin::get_name/$1');
+$routes->get('/article/(:any)', 'Home::post/$1');
 
 /*
  * --------------------------------------------------------------------
