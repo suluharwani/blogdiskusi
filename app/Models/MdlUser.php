@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class MdlUser extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'users';
+    protected $table            = 'user';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
@@ -39,4 +39,7 @@ class MdlUser extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+        function get_cipherpass($email){
+      return $this->where('email',$email)->first('id','password','email','level','nama_depan','nama_belakang');
+    }
 }
